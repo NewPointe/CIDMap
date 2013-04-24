@@ -102,7 +102,7 @@ if($_POST["action"] === "add" || $_POST["action"] === "delete"){
             <a id="settingsHead" href="#">Options:</a>
             <div id="settingscontent">
                 <ul>
-                    <li><a href="#">Upload .csv</a></li>
+                    <li><a href="uploadCSV.html">Upload .csv</a></li>
                     <li><a href="#">Download .csv</a></li>
                     <li><a href="#">Update geocodes</a></li>
                 </ul>
