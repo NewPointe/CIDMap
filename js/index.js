@@ -22,8 +22,8 @@ var MapData = {
     Campuses: [["Dover", 40.504756,-81.540552],
                ["Canton", 40.856902,-81.418123],
                ["Millersburg", 40.559279,-81.942299]],
-    CampusLogo:"logo.png",
-    CampusMarker:"marker-green.png",
+    CampusLogo:"img/logo.png",
+    CampusMarker:"img/marker-green.png",
     CIDLocations: null,
     CIDMarker: null
 }
@@ -106,11 +106,11 @@ setCampusMarkers = function(map, locations){
             var campus = locations[loc];
             var themarker = new google.maps.Marker({
                 map: map,
-                icon: MapData.CIDMarker,
+                icon: MapData.CampusMarker,
                 position: new google.maps.LatLng(MapData.Campuses[loc][1], MapData.Campuses[loc][2]),
                 title: campus[0],
                 zIndex: loc,
-                html: campus[2],
+                html: "<img src='" + MapData.CampusLogo + "' ><h2>" + campus[0] + " Campus</h2>",
                 animation: google.maps.Animation.DROP
             });
             google.maps.event.addListener(themarker, 'click', function() {
@@ -125,28 +125,20 @@ setCampusMarkers = function(map, locations){
 setLocationMarkers = function(map, locations){
     
     for (var loc = 0; loc < locations.length; loc++) {
-        geocode(locations[loc][1], function(results, status){
-            var campus = getAddressInfo(results[0].formatted_address)
-            if(campus != null) {
                 var themarker = new google.maps.Marker({
                     map: map,
-                    position: results[0].geometry.location,
-                    title: campus[0],
+                    position: new google.maps.LatLng(locations[loc][1], locations[loc][2]),
+                    title: locations[loc][0],
                     zIndex: loc,
-                    html: campus[2],
+                    html: "<h2>" + locations[loc][0] + "</h2><br /><p>" + locations[loc][4] + "</p>",
                     animation: google.maps.Animation.DROP
                 });
                 google.maps.event.addListener(themarker, 'click', function() {
-                    infowindow.setContent(this.html);
-                    infowindow.open(map, this);
+                    theInfoWindow.setContent(this.html);
+                    theInfoWindow.open(map, this);
                 });
-            }
-            else{
-                if(debug) {
-                    console.log("Could not add point because getAddressInfo() returned null.");
-                }                
-            }
-        })
+            
+        
     }
 }
 
