@@ -104,7 +104,7 @@ if($_POST["action"] === "add" || $_POST["action"] === "delete"){
                 <ul>
                     <li><a href="uploadCSV.html">Upload .csv</a></li>
                     <li><a href="csvdownload.php">Download .csv</a></li>
-                    <li><a href="#">Update geocodes</a></li>
+                    <li><a href="updateall.php">Update geocodes</a></li>
                 </ul>
             </div>
         </div>
