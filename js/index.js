@@ -169,3 +169,18 @@ setupMap = function() {
     
 }
 
+var DToggle = false;
+
+toggleDrawer = function(){
+    if(DToggle){
+        DToggle = false;
+        document.getElementById('drawercontainer').style.top = '-50px';
+        document.getElementById('drawercontainer').style.opacity = "0.8";
+    }
+    else {
+        DToggle = true;
+        document.getElementById('drawercontainer').style.top = '-10px';
+        document.getElementById('drawercontainer').style.opacity = "1.0";
+    }
+    
+}
