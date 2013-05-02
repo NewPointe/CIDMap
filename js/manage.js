@@ -62,8 +62,8 @@ request.send(postdata);
 }
 
 
-function add(){
-postwith('manage.php' , [['action', 'add']
+function add(etc){
+postwith('manage.php' + etc , [['action', 'add']
                         , ['place', getById('place').value]
                         , ['address', getById('address').value]
                         , ['work', getById('work').value]]);
@@ -93,7 +93,7 @@ function postwith (to,p) {
   document.body.removeChild(myForm) ;
 }
 
-function del(id){
-postwith('manage.php' , [['action', 'delete']
+function del(id, etc){
+postwith('manage.php' + etc , [['action', 'delete']
                         , ['id', id]]);    
 }

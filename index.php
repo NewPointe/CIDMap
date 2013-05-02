@@ -19,5 +19,6 @@
         <div id="map_canvas" style="width:100%; height:100%"></div>
         <div id="logo"><img src="img/biglogo.png" width="300" /></div>
         <div id="cidlogo"><img src="img/CID.png" width="300" /></div>
+        <a href="manage.php" style="position: absolute;bottom: 0px;left: 0px;">manage</a>
     </body>
 </html>
