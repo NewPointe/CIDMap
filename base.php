@@ -6,7 +6,7 @@ if ($debug)
 
 function dlog($msg) {
     if ($GLOBALS['debug'])
-        echo $msg . '<br />';
+        echo $msg . '<br /> ';
 }
 
 function jsonStore($json, $file) {
